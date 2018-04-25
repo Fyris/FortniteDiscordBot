@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var config = require('./config');
 var Stats = require('./stats');
-var Fortnite = require('./FortniteClient');
+var Fortnite = require('./fortniteclient');
 
 
 client.on('ready', () => {

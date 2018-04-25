@@ -1,4 +1,4 @@
-var Client = require('./FortniteClient');
+var Client = require('./fortniteclient');
 var self = module.exports = {
 
     getStats: (args,response,channel) => {
