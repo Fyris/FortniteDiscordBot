@@ -57,3 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+.idea
+.idea/vcs.xml
+src/config.js
+.idea/vcs.xml
+src/package-lock.json
