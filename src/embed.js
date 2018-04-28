@@ -10,12 +10,12 @@ var self = module.exports = {
                 "text": "Fortnite Bot"
             },
             "thumbnail": {
-                "url": "https://d1u5p3l4wpay3k.cloudfront.net/fortnite_gamepedia/6/6e/S1.png"
+                "url": "https://github.com/Fyris/FortniteDiscordBot/blob/master/src/media/Fortnite.png?raw=true"
             },
             "author": {
                 "name": "Fortnite Bot",
                 "url": "https://discordapp.com",
-                "icon_url": "https://d1u5p3l4wpay3k.cloudfront.net/fortnite_gamepedia/6/6e/S1.png"
+                "icon_url": "https://github.com/Fyris/FortniteDiscordBot/blob/master/src/media/Fortnite.png?raw=true"
             },
             "fields": [
                 {
@@ -138,7 +138,7 @@ var self = module.exports = {
             color: config.embedcolor,
             description: embed,
             thumbnail: {
-                "url": "https://d1u5p3l4wpay3k.cloudfront.net/fortnite_gamepedia/6/6e/S1.png?version=5a8c20f948aa2c4ce00458a602e8bdec"
+                "url": "https://github.com/Fyris/FortniteDiscordBot/blob/master/src/media/Fortnite.png?raw=true"
             },
         }
     }
