@@ -4,6 +4,8 @@ var Embed = require('./embed');
 var self = module.exports = {
 
     getLeaderBoards:(args, channel) => {
+        if (!args[0]) { channel.send("Please specify platform for Leaderboards."); return;}
+        if (!args[1]) { channel.send("Please specify a mode for Leaderboards (Solo,Duo,Squads)"); return;}
         args[0] = args[0].toLowerCase();
         args[1] = args[1].toLowerCase();
 

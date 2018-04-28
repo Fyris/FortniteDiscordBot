@@ -3,7 +3,7 @@ var self = module.exports = {
 
     formatStats: (args,response) => {
         return {
-            "title": `${response.info.username} Stats - ${response.info.platform} Platform`,
+            "title": `${response.info.username} Stats - ${response.info.platform.toUpperCase()} Platform\n\u200B    `,
             "color": config.embedcolor,
             "timestamp": new Date().toISOString(),
             "footer": {
@@ -39,12 +39,12 @@ var self = module.exports = {
                 },
                 {
                     "name": "K/D",
-                    "value": response.group.solo.killsPerMatch + "\n ",
+                    "value": response.group.solo.killsPerMatch + "\n\u200B",
                     "inline": true
                 },
                 {
                     "name": "Duo",
-                    "value": "---------------------------------------------------------------------\n"
+                    "value": "---------------------------------------------------------------------"
                 },
                 {
                     "name": "Wins",
@@ -63,7 +63,7 @@ var self = module.exports = {
                 },
                 {
                     "name": "K/D",
-                    "value": response.group.duo.killsPerMatch + "\n ",
+                    "value": response.group.duo.killsPerMatch + "\n\u200B",
                     "inline": true
                 },
                 {
@@ -87,7 +87,7 @@ var self = module.exports = {
                 },
                 {
                     "name": "K/D",
-                    "value": response.group.squad.killsPerMatch,
+                    "value": response.group.squad.killsPerMatch + "\n\u200B",
                     "inline": true
                 },
                 {
@@ -137,7 +137,9 @@ var self = module.exports = {
         return {
             color: config.embedcolor,
             description: embed,
-            
+            thumbnail: {
+                "url": "https://d1u5p3l4wpay3k.cloudfront.net/fortnite_gamepedia/6/6e/S1.png?version=5a8c20f948aa2c4ce00458a602e8bdec"
+            },
         }
     }
 }
