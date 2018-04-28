@@ -2,10 +2,12 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var config = require('./config');
 var Stats = require('./stats');
-var Fortnite = require('./fortniteclient');
+var fortnite = require('./fortniteclient');
+var leaderboards = require('./leaderboards');
 
 
 client.on('ready', () => {
+    console.log("Bot ready");
     client.user.setActivity("WIP Fortnite Bot");
 });
 
@@ -15,18 +17,20 @@ client.on('message', msg => {
 
     const args = msg.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
+    const channel = msg.channel;
 
 
-    if (command === 'stats') {
-            Stats.getStats(args, command, msg.channel);
-    }
+
 
     switch(command) {
         case 'stats':
-            Stats.getStats(args, command, msg.channel);
+            Stats.getStats(args, command, channel);
             break;
         case 'status':
-            Fortnite.status(msg.channel);
+            fortnite.status(msg.channel);
+            break;
+        case 'leaderboards':
+            leaderboards.getLeaderBoards(args,channel);
             break;
         default:
             break;
