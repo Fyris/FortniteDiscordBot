@@ -27,10 +27,16 @@ client.on('message', msg => {
             Stats.getStats(args, command, channel);
             break;
         case 'status':
-            fortnite.status(msg.channel);
+            fortnite.status(channel);
             break;
         case 'leaderboards':
             leaderboards.getLeaderBoards(args,channel);
+            break;
+        case 'news':
+            fortnite.news(channel,args);
+            break;
+        case 'help':
+            // TODO :: Help section
             break;
         default:
             break;

@@ -121,11 +121,23 @@ var self = module.exports = {
     formatLeaderBoards : (response,args) => {
         var embed = `**LeaderBoards - ${args[0].toUpperCase()} Platform - ${args[1].toUpperCase()} Mode **\n\n`;
         for (var i = 0, len = response.length; i < len; i++) {
-           embed += i+1 + " . " + response[i].displayName +"\n";
+            embed += i+1 + " . " + response[i].displayName +"\n";
         }
         return {
             color: config.embedcolor,
             description: embed
+        }
+    },
+    formatNews : (response) => {
+        var embed = `**Fortnite News**\n\n`;
+        for (var i = 0, len = response.length; i < len; i++) {
+            embed += "**" + response[i][0] + "**\n";
+            embed += response[i][1] + "\n\n";
+        }
+        return {
+            color: config.embedcolor,
+            description: embed,
+            
         }
     }
 }
