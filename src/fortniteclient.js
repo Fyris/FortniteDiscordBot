@@ -30,7 +30,6 @@ var self = module.exports = {
     },
     news: (channel,lang) => {
         if (lang.length == 0) {
-            //channel.send("Please specify the language of news"); return;
             lang = "en";
         }
         lang = lang[0];

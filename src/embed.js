@@ -141,5 +141,14 @@ var self = module.exports = {
                 "url": "https://github.com/Fyris/FortniteDiscordBot/blob/master/src/media/Fortnite.png?raw=true"
             },
         }
+    },
+    formatHelp: (command, text) => {
+        return {
+            color: config.embedcolor,
+            description: `** Help Documents - ${command}**\n\n${text}`,
+            thumbnail: {
+                "url": "https://github.com/Fyris/FortniteDiscordBot/blob/master/src/media/Fortnite.png?raw=true"
+            },
+        }
     }
 }
