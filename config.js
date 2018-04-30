@@ -11,7 +11,7 @@ var config = module.exports = {
     on_join_server_msg : null, // Auto message on joining a server
 
     embedcolor: 52122,
-    language: 'es',
+    language: 'en',
 
     // CONFIG METHODS
     changeLanguage: (lang,channel) => {
