@@ -28,15 +28,11 @@ var self = module.exports = {
                 });
         });
     },
-    news: (channel,lang) => {
-        if (lang.length == 0) {
-            lang = "en";
-        }
-        lang = lang[0];
+    news: (channel) => {
 
         self.fortniteAPI.login().then(() => {
             self.fortniteAPI
-                .getFortniteNews(lang)
+                .getFortniteNews(config.language)
                 .then(news => {
                     var newsArr = [];
                     for (var i = 0, len = news.br.length; i < len; i++) {

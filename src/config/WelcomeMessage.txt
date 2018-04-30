@@ -1,0 +1,12 @@
+
+**FortBot added!
+Thanks for adding me to your server! **
+
+__Available Commands__:
+-stats
+-leaderboards
+-status
+-news
+
+For help, type **-help**
+For help on a specific command type **-help command**

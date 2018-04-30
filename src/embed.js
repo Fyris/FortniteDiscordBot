@@ -5,17 +5,12 @@ var self = module.exports = {
         return {
             "title": `${response.info.username} Stats - ${response.info.platform.toUpperCase()} Platform\n\u200B    `,
             "color": config.embedcolor,
-            "timestamp": new Date().toISOString(),
-            "footer": {
-                "text": "Fortnite Bot"
-            },
             "thumbnail": {
                 "url": "https://github.com/Fyris/FortniteDiscordBot/blob/master/src/media/Fortnite.png?raw=true"
             },
             "author": {
                 "name": "Fortnite Bot",
-                "url": "https://discordapp.com",
-                "icon_url": "https://github.com/Fyris/FortniteDiscordBot/blob/master/src/media/Fortnite.png?raw=true"
+                "url": "https://github.com/Fyris/FortniteDiscordBot"
             },
             "fields": [
                 {

@@ -29,7 +29,10 @@
     "fortnite-api": "github:fyris/fortnite-api",
     "libsodium-wrappers": "^0.7.3",
     "node-opus": "^0.2.7",
+    "nodemon": "^1.17.3",
+    "npm": "^6.0.0",
     "opusscript": "0.0.6",
+    "replace-in-file": "^3.4.0",
     "sodium": "github:general-programming/node-sodium",
     "uws": "^9.148.0"
   }
