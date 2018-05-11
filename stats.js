@@ -9,12 +9,13 @@ var self = module.exports = {
         var server = "pc";
 
         args[0] = args[0].toLowerCase();
-        if (args[0] != "pc" && args[0] != 'ps4' && args[0] != "xb1") {
-            name = args.slice(0).join(" ");
+        if (args[0] == "pc" || args[0] == 'ps4' || args[0] == "xb1") {
+            name = args.slice(1).join(" ");
+            server = args[0];
         }
         else
         {
-            name = args.slice(1).join(" ");
+            name = args.slice(0).join(" ");
         }
 
         Client.fortniteAPI.login().then(() => {
