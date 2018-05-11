@@ -8,15 +8,22 @@ var help = require('./help');
 
 client.on('ready', () => {
     console.log("Bot ready");
-    config.getWelcomeMessage(); // Load welcome message
+    console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
+    console.log(client.guilds.forEach(function(guild) {
+        console.log(guild.name + " " + guild.memberCount);
+    }));
+    
+config.getWelcomeMessage(); // Load welcome message
     client.user.setActivity(`${config.prefix}help`);
 });
 
 client.on('guildCreate', (guild) => {
+console.log("joined " + guild.name);
     guild.defaultChannel.send({embed: config.on_join_server_msg});
 });
 
 client.on('message', msg => {
+console.log(msg.content);
     if (msg.author.bot) return;
     if (msg.content.indexOf(config.prefix) !== 0) return;
 
@@ -39,7 +46,7 @@ client.on('message', msg => {
             fortnite.news(channel,args);
             break;
         case 'store':
-            //fortnite.store(channel,args);
+            fortnite.store();
             break;
         case 'help':
             help.HelpDocs(args,msg.author);

@@ -7,7 +7,7 @@ var self = module.exports = {
         if (!msg[0]) msg[0] = "default";
         switch (msg[0].toLowerCase()){
             case "stats":
-                var statsHelp = `${config.prefix}stats {display name} {platform}\n Example: ${config.prefix}stats ninja pc\n Supported Platforms: PC,PS4,XB1`;
+                var statsHelp = `${config.prefix}stats {platform} {display name}\n Example: ${config.prefix}stats pc ninja\n Supported Platforms: PC,PS4,XB1`;
                 author.send({embed: embed.formatHelp(msg[0],statsHelp)});
                 break;
             case "leaderboards":

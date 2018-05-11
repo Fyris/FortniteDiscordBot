@@ -3,11 +3,12 @@ var self = module.exports = {
 
     formatStats: (args,response) => {
         return {
-            "title": `${response.info.username} Stats - ${response.info.platform.toUpperCase()} Platform\n\u200B    `,
+            "title": `${response.info.username} Stats - ${response.info.platform.toUpperCase()} Platform`,
             "color": config.embedcolor,
             "thumbnail": {
                 "url": "https://github.com/Fyris/FortniteDiscordBot/blob/master/src/media/Fortnite.png?raw=true"
             },
+
             "author": {
                 "name": "Fortnite Bot",
                 "url": "https://github.com/Fyris/FortniteDiscordBot"
@@ -34,7 +35,17 @@ var self = module.exports = {
                 },
                 {
                     "name": "K/D",
-                    "value": response.group.solo.killsPerMatch + "\n\u200B",
+                    "value": response.group.solo["k/d"],
+                    "inline": true
+                },
+                {
+                    "name": "K/Match",
+                    "value": response.group.solo.killsPerMatch,
+                    "inline": true
+                },
+                {
+                    "name": "Win%",
+                    "value": response.group.solo["win%"] + "%\n\u200B",
                     "inline": true
                 },
                 {
@@ -58,7 +69,17 @@ var self = module.exports = {
                 },
                 {
                     "name": "K/D",
-                    "value": response.group.duo.killsPerMatch + "\n\u200B",
+                    "value": response.group.duo["k/d"],
+                    "inline": true
+                },
+                {
+                    "name": "K/Match",
+                    "value": response.group.duo.killsPerMatch,
+                    "inline": true
+                },
+                {
+                    "name": "Win%",
+                    "value": response.group.duo["win%"] + "%\n\u200B",
                     "inline": true
                 },
                 {
@@ -82,9 +103,27 @@ var self = module.exports = {
                 },
                 {
                     "name": "K/D",
-                    "value": response.group.squad.killsPerMatch + "\n\u200B",
+                    "value": response.group.squad["k/d"],
                     "inline": true
                 },
+                {
+                    "name": "K/Match",
+                    "value": response.group.squad.killsPerMatch,
+                    "inline": true
+                },
+                {
+                    "name": "Win%",
+                    "value": response.group.squad["win%"] + "%\n\u200B",
+                    "inline": true
+                }
+            ]
+        }
+
+    },
+    formatLifetimeStats: (args,response) => {
+        return {
+            "color": config.embedcolor,
+            "fields": [
                 {
                     "name": "Lifetime",
                     "value": "---------------------------------------------------------------------"
@@ -106,7 +145,17 @@ var self = module.exports = {
                 },
                 {
                     "name": "K/D",
+                    "value": response.lifetimeStats["k/d"],
+                    "inline": true
+                },
+                {
+                    "name": "K/Match",
                     "value": response.lifetimeStats.killsPerMatch,
+                    "inline": true
+                },
+                {
+                    "name": "Win%",
+                    "value": response.lifetimeStats["win%"] + "%",
                     "inline": true
                 }
             ]

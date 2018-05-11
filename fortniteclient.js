@@ -44,6 +44,22 @@ var self = module.exports = {
                     console.log(err);
                 });
         });
+    },
+    store: () => {
+
+        self.fortniteAPI.login().then(() => {
+            self.fortniteAPI
+                .getStore(config.language)
+                .then(store => {
+                    store.storefronts.forEach(function(storefront) {
+                        if(storefront.name == "BRWeeklyStorefront" ) //|| storefront.name == "BRDailyStorefront"
+                            console.log(storefront.catalogEntries[0]);
+                    });
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        });
     }
 
 }
