@@ -8,7 +8,6 @@ var self = module.exports = {
 
         var name = args.slice(1).join(" ");
 
-        console.log(name);
         args[0] = args[0].toLowerCase();
         if (args[0] != "pc" && args[0] != 'ps4' && args[0] != "xb1") { channel.send("Please specify a platform (pc,ps4,xb1)"); return; }
 
