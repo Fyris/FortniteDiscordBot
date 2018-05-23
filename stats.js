@@ -9,9 +9,18 @@ var self = module.exports = {
         var server = "pc";
 
         args[0] = args[0].toLowerCase();
-        if (args[0] == "pc" || args[0] == 'ps4' || args[0] == "xb1") {
+	if (args[0] == "playstation" || args[0] == "ps4" || args[0] == "ps")
+	{
+		name = args.slice(1).join(" ");
+            	server = "ps4";
+	}
+	else if (args[0] == "xbox" || args[0] == "xb1") {
             name = args.slice(1).join(" ");
-            server = args[0];
+            server = "xb1";
+        }
+	else if (args[0] == "pc") {
+            name = args.slice(1).join(" ");
+            server = "pc";
         }
         else
         {
@@ -27,7 +36,7 @@ var self = module.exports = {
                 })
                 .catch(err => {
                     if (err.toLowerCase() == "player not found" || err == "Impossible to fetch User. User not found on this platform")
-                        channel.send(`Player ${args[0]} not found.`);
+                        channel.send(`Player ${name} not found on the ${server.toUpperCase()} platform.`);
                     console.log(err);
                 });
         });
